@@ -11,10 +11,10 @@ public class KermitRunner extends YaegerGame {
     @Override
     public void setupGame() {
         setGameTitle("Kermit Runner");
-        setSize(new Size(1920, 1080));    }
+        setSize(new Size(1440, 810));    }
 
     @Override
     public void setupScenes() {
-        addScene(0, new TitleScene());
+        addScene(0, new BeginScherm());
     }
 }

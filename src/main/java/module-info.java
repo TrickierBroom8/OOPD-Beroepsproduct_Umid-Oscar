@@ -1,4 +1,4 @@
-module waterworld {
+module kermitrunner {
     requires hanyaeger;
 
     exports com.github.hanyaeger.tutorial;

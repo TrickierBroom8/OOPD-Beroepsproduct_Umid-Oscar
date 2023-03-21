@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class TitleScene extends StaticScene {
+public class BeginScherm extends StaticScene {
     @Override
     public void setupScene() {
         setBackgroundAudio("audio/Beginscherm.mp3");
