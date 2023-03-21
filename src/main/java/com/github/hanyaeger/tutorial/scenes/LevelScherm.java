@@ -12,8 +12,7 @@ import javafx.scene.text.FontWeight;
 public class LevelScherm extends DynamicScene {
     @Override
     public void setupScene() {
-//        setBackgroundAudio("audio/LevelScherm.mp3");
-        setBackgroundImage("backgrounds/LevelScherm.jpg");
+
     }
 
     @Override

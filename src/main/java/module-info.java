@@ -7,4 +7,5 @@ module kermitrunner {
     opens backgrounds;
     opens sprites;
     exports com.github.hanyaeger.tutorial.scenes;
+    exports com.github.hanyaeger.tutorial.maps;
 }
