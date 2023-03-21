@@ -1,23 +1,26 @@
-# YAEGER_
+# Introduction
 
-Yaeger is Another Education Game Engine Runtime, and a fully functional 2D
-game-engine that requires only a traditional Object-Oriented style of
-programming. To create a game, classes should be extended and interfaces
-should be implemented.
+In this tutorial you will create a simple game called Waterworld. We will start
+with an empty project. Only the assets and the project settings are provided. 
+Step-by-step you will be guided in the creation of simple game, and in doing 
+so, become familiar with many of the features of Yaeger.
 
-Its API is based on inheritance and composition and can be seen as a layer of
-abstraction on top of JavaFX. JavaFX is only exposed minimally, so it is not
-trivially possible to use JavaFX within Yaeger. This is by design.
+## What we will be building
 
-## Required Java version
+When this tutorial is completed, we will have a game in which a fish (called 
+Hanny) has to navigate through the ocean and pop air bubbles. While doing so,
+she has to prevent being bitten by enemies that also prowl the ocean
 
-Although Yaeger only exposes a traditional Object Oriented API, internally its
-based on modern Java. To see which specific version is required, please read
-the [readme](https://github.com/han-yaeger/yaeger) on the project GitHub.
+![Waterworld](images/game/game.png)
 
-## Howto read this manual
+## Prerequisite
 
-This manual is only meant to give a high-level overview. It will paint a
-picture of how a game can be created and what kind of objects are available.
-The details and specifics will not be part of this manual. They can be found in
-the [JavaDoc API](https://han-yaeger.github.io/yaeger/).
+Yaeger requires Java JDK16 or above to work. Although it can be used with any 
+modern IDE that supports Java, this tutorial will only include examples for
+[JetBrains IntelliJ](https://www.jetbrains.com/idea/) and 
+[Eclipse](https://www.eclipse.org/).
+
+This tutorial expects a basic understanding of the Java Programming language.
+From Java, we will only be using the basic constructs, such as Packages, 
+classes, interfaces and methods. More "modern" parts of the language, such 
+as lambda's or generics are not required, nor used.

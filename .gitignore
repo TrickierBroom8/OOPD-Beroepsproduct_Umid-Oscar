@@ -1,6 +1,6 @@
 # Created by https://www.gitignore.io/api/intellij
 
-### Mac OSX
+### MacOSX ###
 .DS_Store
 
 ### Maven ###
@@ -132,6 +132,3 @@ local.properties
 .classpath
 
 # End of https://www.gitignore.io/api/eclipse
-
-# MdBook
-book/

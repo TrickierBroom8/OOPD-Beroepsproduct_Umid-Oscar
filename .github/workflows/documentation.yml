@@ -1,9 +1,6 @@
 name: Publish Documentation
 
 on:
-  workflow_run:
-    workflows: [ "Release" ]
-    types: [ completed ]
   push:
     branches:
       - documentation
@@ -14,35 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch source code
-        uses: actions/checkout@v3.2.0
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3.9.0
-        with:
-          distribution: 'zulu'
-          java-version: 17
-
-      - name: Cache Maven packages
-        uses: actions/cache@v3.0.11
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-
-      - name: Generate JavaDoc
-        run: mvn compile javadoc:javadoc
-
-      - name: Deploy JavaDoc on GH-Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/site/apidocs
-          keep_files: false
-
-      - name: QA check Markdown content
-        uses: nosborn/github-action-markdown-cli@v3.1.0
-        with:
-          files: docs/
+        uses: actions/checkout@v2
 
       - name: Check links in markdown
         uses: gaurav-nelson/github-action-markdown-link-check@v1
@@ -56,10 +25,9 @@ jobs:
       - run: |
           mdbook build
 
-      - name: Deploy Book on GH-Pages
+      - name: Publish book website
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/docs
-          destination_dir: ./book
-          keep_files: true
+          keep_files: false
