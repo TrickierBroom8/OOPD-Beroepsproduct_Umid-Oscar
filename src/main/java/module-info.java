@@ -6,4 +6,5 @@ module kermitrunner {
     opens audio;
     opens backgrounds;
     opens sprites;
+    exports com.github.hanyaeger.tutorial.scenes;
 }
