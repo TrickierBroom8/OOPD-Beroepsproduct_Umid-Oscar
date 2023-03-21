@@ -26,7 +26,7 @@ public class BeginScherm extends StaticScene {
 
     @Override
     public void setupEntities() {
-        addEntity(new StartKnop(kermitrunner, new Coordinate2D(getWidth() * 0.8, getHeight() / 2)));
+        addEntity(new StartKnop(kermitrunner, new Coordinate2D(getWidth() / 2, getHeight() * 0.8)));
 
         var beginSchermTekst = new TextEntity(
                 new Coordinate2D(getWidth() / 2, getHeight() / 3),
