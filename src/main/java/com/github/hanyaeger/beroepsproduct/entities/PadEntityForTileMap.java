@@ -11,9 +11,9 @@ public class PadEntityForTileMap extends SpriteEntity {
     }
 
     public enum PadType {
-        HEG("entities/grass_simple.png"),
-        PAD("entities/grass_complex.png"),
-        DEUR("entities/grass_short.png");
+        HEG("entities/grass_long.png"),
+        PAD("entities/grass_simple.png"),
+        DEUR("entities/grass_long.png");
 
         String sprite;
 

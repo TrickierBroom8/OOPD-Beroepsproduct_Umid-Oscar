@@ -19,7 +19,7 @@ public class LevelEenScherm extends DynamicScene implements TileMapContainer {
 
     @Override
     public void setupTileMaps() {
-        var levelEenMap = new LevelEenMap(new Coordinate2D(0, 0), new Size(100, 100));
+        var levelEenMap = new LevelEenMap(new Coordinate2D(0, 0), new Size(getWidth(), getHeight()));
         addTileMap(levelEenMap);
     }
 
