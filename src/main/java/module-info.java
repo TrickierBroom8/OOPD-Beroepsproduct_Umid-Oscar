@@ -8,4 +8,5 @@ module kermitrunner {
     opens sprites;
     exports com.github.hanyaeger.beroepsproduct.scenes;
     exports com.github.hanyaeger.beroepsproduct.maps;
+    exports com.github.hanyaeger.beroepsproduct.entities;
 }

@@ -3,7 +3,7 @@ package com.github.hanyaeger.beroepsproduct;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.beroepsproduct.scenes.BeginScherm;
-import com.github.hanyaeger.beroepsproduct.scenes.LevelScherm;
+import com.github.hanyaeger.beroepsproduct.scenes.LevelEenScherm;
 
 public class KermitRunner extends YaegerGame {
     public static void main(String[] args){
@@ -19,6 +19,6 @@ public class KermitRunner extends YaegerGame {
     @Override
     public void setupScenes() {
         addScene(0, new BeginScherm(this));
-        addScene(1, new LevelScherm());
+        addScene(1, new LevelEenScherm());
     }
 }
