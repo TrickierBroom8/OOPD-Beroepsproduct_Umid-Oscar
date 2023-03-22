@@ -1,9 +1,9 @@
-package com.github.hanyaeger.tutorial;
+package com.github.hanyaeger.beroepsproduct;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.tutorial.scenes.BeginScherm;
-import com.github.hanyaeger.tutorial.scenes.LevelScherm;
+import com.github.hanyaeger.beroepsproduct.scenes.BeginScherm;
+import com.github.hanyaeger.beroepsproduct.scenes.LevelScherm;
 
 public class KermitRunner extends YaegerGame {
     public static void main(String[] args){

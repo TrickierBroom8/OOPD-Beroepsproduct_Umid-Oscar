@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial;
+package com.github.hanyaeger.beroepsproduct;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;

@@ -1,11 +1,11 @@
-package com.github.hanyaeger.tutorial.scenes;
+package com.github.hanyaeger.beroepsproduct.scenes;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
-import com.github.hanyaeger.tutorial.KermitRunner;
-import com.github.hanyaeger.tutorial.StartKnop;
+import com.github.hanyaeger.beroepsproduct.KermitRunner;
+import com.github.hanyaeger.beroepsproduct.StartKnop;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;

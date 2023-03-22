@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial.maps;
+package com.github.hanyaeger.beroepsproduct.maps;
 
 import java.util.ArrayList;
 

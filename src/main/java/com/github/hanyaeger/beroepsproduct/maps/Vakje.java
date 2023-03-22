@@ -1,4 +1,4 @@
-package com.github.hanyaeger.tutorial.maps;
+package com.github.hanyaeger.beroepsproduct.maps;
 
 public class Vakje {
     public int x;

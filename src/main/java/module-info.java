@@ -1,11 +1,11 @@
 module kermitrunner {
     requires hanyaeger;
 
-    exports com.github.hanyaeger.tutorial;
+    exports com.github.hanyaeger.beroepsproduct;
 
     opens audio;
     opens backgrounds;
     opens sprites;
-    exports com.github.hanyaeger.tutorial.scenes;
-    exports com.github.hanyaeger.tutorial.maps;
+    exports com.github.hanyaeger.beroepsproduct.scenes;
+    exports com.github.hanyaeger.beroepsproduct.maps;
 }
