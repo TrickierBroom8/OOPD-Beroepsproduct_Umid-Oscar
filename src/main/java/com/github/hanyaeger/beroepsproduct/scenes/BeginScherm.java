@@ -33,7 +33,7 @@ public class BeginScherm extends StaticScene {
                 "Kermit Runner"
         );
         beginSchermTekst.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        beginSchermTekst.setFill(Color.DARKBLUE);
+        beginSchermTekst.setFill(Color.GREEN);
         beginSchermTekst.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
         addEntity(beginSchermTekst);
     }
