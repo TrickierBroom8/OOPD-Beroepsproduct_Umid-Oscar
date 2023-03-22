@@ -1,5 +1,6 @@
 package com.github.hanyaeger.beroepsproduct;
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
@@ -17,6 +18,7 @@ public class StartKnop extends TextEntity implements MouseButtonPressedListener,
         super(initialLocation,"Start spel");
         setFill(Color.PURPLE);
         setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        setAnchorPoint(AnchorPoint.CENTER_CENTER);
         this.kermitrunner = kermitrunner;
     }
 

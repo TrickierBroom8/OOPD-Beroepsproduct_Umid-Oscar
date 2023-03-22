@@ -13,7 +13,7 @@ public class PadEntityForTileMap extends SpriteEntity {
     public enum PadType {
         HEG("entities/grass_long.png"),
         PAD("entities/grass_simple.png"),
-        DEUR("entities/grass_long.png");
+        DEUR("entities/door_simple.png");
 
         String sprite;
 
