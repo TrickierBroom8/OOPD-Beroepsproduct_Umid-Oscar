@@ -4,10 +4,12 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
+import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.entities.Direction;
+import com.github.hanyaeger.api.scenes.SceneBorder;
 
-public class Kermit extends DynamicSpriteEntity implements Collided {
+public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorderTouchingWatcher {
 
     Direction kermitRichting;
     int snelheid = 1;
@@ -43,6 +45,10 @@ public class Kermit extends DynamicSpriteEntity implements Collided {
 
         this.stopKermit();
         this.setAnchorLocation(new Coordinate2D(x, y));
+    }
+
+    public void notifyBoundaryTouching(final SceneBorder border) {
+        this.stopKermit();
     }
 
     public void stopKermit() {
