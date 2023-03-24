@@ -14,7 +14,7 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
 
     private KermitRunner kermitrunner;
     Direction kermitRichting;
-    int snelheid = 2;
+    int snelheid = 1;
 
     int x, y;
 
