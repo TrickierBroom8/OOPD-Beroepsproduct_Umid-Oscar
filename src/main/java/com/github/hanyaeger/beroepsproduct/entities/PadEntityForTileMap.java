@@ -9,7 +9,7 @@ import javafx.scene.input.KeyCode;
 
 import java.util.Set;
 
-public class PadEntityForTileMap extends SpriteEntity implements KeyListener {
+public class PadEntityForTileMap extends SpriteEntity {
 
     public PadEntityForTileMap(final Coordinate2D location, final Size size, final PadType padType) {
         super(padType.sprite, location, size);
@@ -25,21 +25,6 @@ public class PadEntityForTileMap extends SpriteEntity implements KeyListener {
 
         PadType(String sprite) {
             this.sprite = sprite;
-        }
-    }
-
-    @Override
-    public void onPressedKeysChange(Set<KeyCode> set) {
-        if (set.size() == 1) {
-            if (set.contains(KeyCode.W)) {
-                // wissel tile naar boven
-            } else if (set.contains(KeyCode.S)) {
-                // wissel tile naar onder
-            } else if (set.contains(KeyCode.D)) {
-                // wissel tile naar rechts
-            } else if (set.contains(KeyCode.A)) {
-                // wissel tile naar links
-            }
         }
     }
 }

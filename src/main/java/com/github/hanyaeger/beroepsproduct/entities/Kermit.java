@@ -12,7 +12,7 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorderTouchingWatcher {
 
     Direction kermitRichting;
-    int snelheid = 1;
+    int snelheid = 2;
 
     public Kermit(Coordinate2D location, Size size) {
         super("entities/Kermit.gif", location, size);
@@ -25,6 +25,20 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
 
     @Override
     public void onCollision(Collider collider) {
+        this.stopKermit();
+        this.collisionAfstand();
+    }
+
+    public void notifyBoundaryTouching(final SceneBorder border) {
+        this.stopKermit();
+        this.collisionAfstand();
+    }
+
+    public void stopKermit() {
+        this.setMotion(0, 0);
+    }
+
+    public void collisionAfstand() {
         int x = (int) getAnchorLocation().getX();
         int y = (int) getAnchorLocation().getY();
 
@@ -43,15 +57,6 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
                 break;
         }
 
-        this.stopKermit();
         this.setAnchorLocation(new Coordinate2D(x, y));
-    }
-
-    public void notifyBoundaryTouching(final SceneBorder border) {
-        this.stopKermit();
-    }
-
-    public void stopKermit() {
-        this.setMotion(0, 0);
     }
 }
