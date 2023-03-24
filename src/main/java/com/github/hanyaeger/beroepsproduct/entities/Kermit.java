@@ -43,7 +43,6 @@ public class Kermit extends DynamicSpriteEntity implements Collided {
 
         this.stopKermit();
         this.setAnchorLocation(new Coordinate2D(x, y));
-        // Zet stil, stop met bewegen.
     }
 
     public void stopKermit() {
