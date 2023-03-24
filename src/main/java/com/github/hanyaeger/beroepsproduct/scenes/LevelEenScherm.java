@@ -7,6 +7,7 @@ import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.api.userinput.KeyListener;
+import com.github.hanyaeger.beroepsproduct.KermitRunner;
 import com.github.hanyaeger.beroepsproduct.entities.Kermit;
 import com.github.hanyaeger.beroepsproduct.maps.LevelEenMap;
 import javafx.scene.input.KeyCode;
@@ -14,13 +15,22 @@ import javafx.scene.input.KeyCode;
 import java.util.Set;
 
 public class LevelEenScherm extends DynamicScene implements TileMapContainer, KeyListener {
+
+    private KermitRunner kermitrunner;
+    public Kermit kermit;
+
+    public LevelEenScherm(KermitRunner kermitrunner) {
+        this.kermitrunner = kermitrunner;
+    }
+
     @Override
     public void setupScene() {
 
     }
-    public Kermit kermit = new Kermit(new Coordinate2D(12, 12), new Size(24, 24));
+
     @Override
     public void setupEntities() {
+        kermit = new Kermit(new Coordinate2D(12, 12), new Size(24, 24), kermitrunner);
         addEntity(kermit);
     }
 
