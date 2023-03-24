@@ -5,6 +5,7 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.YaegerEntity;
 import com.github.hanyaeger.api.scenes.TileMap;
 import com.github.hanyaeger.beroepsproduct.entities.HegEntity;
+import com.github.hanyaeger.beroepsproduct.entities.Kermit;
 import com.github.hanyaeger.beroepsproduct.entities.PadEntityForTileMap;
 
 public class LevelEenMap extends TileMap {
@@ -15,6 +16,8 @@ public class LevelEenMap extends TileMap {
 
     @Override
     public void setupEntities() {
+//        addEntity(0, Kermit.class);
+
         addEntity(1, PadEntityForTileMap.class, PadEntityForTileMap.PadType.PAD);
         addEntity(2, HegEntity.class);
         addEntity(3, PadEntityForTileMap.class, PadEntityForTileMap.PadType.DEUR);

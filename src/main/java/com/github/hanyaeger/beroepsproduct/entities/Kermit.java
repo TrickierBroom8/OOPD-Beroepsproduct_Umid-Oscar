@@ -14,6 +14,11 @@ public class Kermit extends DynamicSpriteEntity implements Collided {
 
     @Override
     public void onCollision(Collider collider) {
-        this.setMotion(0,0);
+         this.stopKermit();
+        // Zet stil, stop met bewegen.
+    }
+
+    public void stopKermit() {
+        this.setMotion(0, 0);
     }
 }

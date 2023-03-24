@@ -17,7 +17,7 @@ public class LevelEenScherm extends DynamicScene implements TileMapContainer, Ke
     public void setupScene() {
 
     }
-    public Kermit kermit = new Kermit(new Coordinate2D(0, 0), new Size(32, 32));
+    public Kermit kermit = new Kermit(new Coordinate2D(0, 0), new Size(24, 24));
     @Override
     public void setupEntities() {
         addEntity(kermit);
@@ -41,8 +41,9 @@ public class LevelEenScherm extends DynamicScene implements TileMapContainer, Ke
                 kermit.setMotion(1, Direction.RIGHT);
             } else if (set.contains(KeyCode.A)) {
                 kermit.setMotion(1, Direction.LEFT);
+            } else if (set.contains(KeyCode.SPACE)) {
+                kermit.stopKermit();
             }
         }
     }
-
 }
