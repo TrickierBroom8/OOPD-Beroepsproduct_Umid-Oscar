@@ -1,5 +1,6 @@
 package com.github.hanyaeger.beroepsproduct.scenes;
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Direction;
@@ -17,7 +18,7 @@ public class LevelEenScherm extends DynamicScene implements TileMapContainer, Ke
     public void setupScene() {
 
     }
-    public Kermit kermit = new Kermit(new Coordinate2D(0, 0), new Size(24, 24));
+    public Kermit kermit = new Kermit(new Coordinate2D(12, 12), new Size(24, 24));
     @Override
     public void setupEntities() {
         addEntity(kermit);
@@ -34,13 +35,13 @@ public class LevelEenScherm extends DynamicScene implements TileMapContainer, Ke
     public void onPressedKeysChange(Set<KeyCode> set) {
         if (set.size() == 1) {
             if (set.contains(KeyCode.W)) {
-                kermit.setMotion(1, Direction.UP);
+                kermit.beweegKermit(Direction.UP);
             } else if (set.contains(KeyCode.S)) {
-                kermit.setMotion(1, Direction.DOWN);
+                kermit.beweegKermit(Direction.DOWN);
             } else if (set.contains(KeyCode.D)) {
-                kermit.setMotion(1, Direction.RIGHT);
+                kermit.beweegKermit(Direction.RIGHT);
             } else if (set.contains(KeyCode.A)) {
-                kermit.setMotion(1, Direction.LEFT);
+                kermit.beweegKermit(Direction.LEFT);
             } else if (set.contains(KeyCode.SPACE)) {
                 kermit.stopKermit();
             }
