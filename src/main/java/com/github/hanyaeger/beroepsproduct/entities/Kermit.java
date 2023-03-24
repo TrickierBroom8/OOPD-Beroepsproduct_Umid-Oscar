@@ -8,14 +8,19 @@ import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.scenes.SceneBorder;
+import com.github.hanyaeger.beroepsproduct.KermitRunner;
 
 public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorderTouchingWatcher {
 
+    private KermitRunner kermitrunner;
     Direction kermitRichting;
     int snelheid = 2;
 
-    public Kermit(Coordinate2D location, Size size) {
+    int x, y;
+
+    public Kermit(Coordinate2D location, Size size, KermitRunner kermitrunner) {
         super("entities/Kermit.gif", location, size);
+        this.kermitrunner = kermitrunner;
     }
 
     public void beweegKermit(Direction richting) {
@@ -25,13 +30,17 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
 
     @Override
     public void onCollision(Collider collider) {
-        this.stopKermit();
-        this.collisionAfstand();
+        if (collider.getClass() == HegEntity.class) {
+            this.collisionAfstand();
+            this.stopKermit();
+        } else if (collider.getClass() == DeurEntity.class) {
+            kermitrunner.setActiveScene(3);
+        }
     }
 
     public void notifyBoundaryTouching(final SceneBorder border) {
-        this.stopKermit();
         this.collisionAfstand();
+        this.stopKermit();
     }
 
     public void stopKermit() {
@@ -44,19 +53,18 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
 
         switch (kermitRichting) {
             case UP:
-                y += 1;
+                y += this.snelheid;
                 break;
             case DOWN:
-                y -= 1;
+                y -= this.snelheid;
                 break;
             case LEFT:
-                x += 1;
+                x += this.snelheid;
                 break;
             case RIGHT:
-                x -= 1;
+                x -= this.snelheid;
                 break;
         }
-
         this.setAnchorLocation(new Coordinate2D(x, y));
     }
 }

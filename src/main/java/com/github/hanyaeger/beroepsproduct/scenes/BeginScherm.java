@@ -28,13 +28,15 @@ public class BeginScherm extends StaticScene {
     public void setupEntities() {
         addEntity(new StartKnop(kermitrunner, new Coordinate2D(getWidth() / 2, getHeight() * 0.8)));
 
-        var beginSchermTekst = new TextEntity(
+        var titelText = new TextEntity(
                 new Coordinate2D(getWidth() / 2, getHeight() / 3),
                 "Kermit Runner"
         );
-        beginSchermTekst.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        beginSchermTekst.setFill(Color.GREEN);
-        beginSchermTekst.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
-        addEntity(beginSchermTekst);
+
+        titelText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+        titelText.setFill(Color.GREEN);
+        titelText.setStrokeColor(Color.ORANGE);
+        titelText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
+        addEntity(titelText);
     }
 }
