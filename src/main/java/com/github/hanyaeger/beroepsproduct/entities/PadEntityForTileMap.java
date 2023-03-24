@@ -16,7 +16,7 @@ public class PadEntityForTileMap extends SpriteEntity implements KeyListener {
     }
 
     public enum PadType {
-        HEG("entities/grass_long.png"),
+
         PAD("entities/grass_simple.png"),
         DEUR("entities/door_simple.png"),
         PLANT("entities/plant_simple.png");

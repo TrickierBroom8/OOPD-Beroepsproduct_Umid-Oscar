@@ -32,17 +32,17 @@ public class LevelEenScherm extends DynamicScene implements TileMapContainer, Ke
 
     @Override
     public void onPressedKeysChange(Set<KeyCode> set) {
-//        if (set.size() == 1) {
-//            if (set.contains(KeyCode.W)) {
-//                kermit.setMotion(1, Direction.UP);
-//            } else if (set.contains(KeyCode.S)) {
-//                kermit.setMotion(1, Direction.DOWN);
-//            } else if (set.contains(KeyCode.D)) {
-//                kermit.setMotion(1, Direction.RIGHT);
-//            } else if (set.contains(KeyCode.A)) {
-//                kermit.setMotion(1, Direction.LEFT);
-//            }
-//        }
+        if (set.size() == 1) {
+            if (set.contains(KeyCode.W)) {
+                kermit.setMotion(1, Direction.UP);
+            } else if (set.contains(KeyCode.S)) {
+                kermit.setMotion(1, Direction.DOWN);
+            } else if (set.contains(KeyCode.D)) {
+                kermit.setMotion(1, Direction.RIGHT);
+            } else if (set.contains(KeyCode.A)) {
+                kermit.setMotion(1, Direction.LEFT);
+            }
+        }
     }
 
 }
