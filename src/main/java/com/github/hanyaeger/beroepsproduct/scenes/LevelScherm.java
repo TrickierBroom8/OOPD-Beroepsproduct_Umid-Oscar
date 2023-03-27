@@ -19,7 +19,7 @@ import java.util.Set;
 public class LevelScherm extends DynamicScene implements TimerContainer, TileMapContainer, KeyListener {
     private KermitRunner kermitrunner;
 
-    private final int TIMER_START_TIJD = 15;
+    private final int TIMER_START_TIJD = 1000000000;
     private int timerTijd = TIMER_START_TIJD;
     private Timer spelKlok;
     private TileMap levelMap;
