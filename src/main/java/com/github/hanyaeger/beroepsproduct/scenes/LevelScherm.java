@@ -9,7 +9,6 @@ import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.beroepsproduct.KermitRunner;
 import com.github.hanyaeger.beroepsproduct.entities.Kermit;
-import com.github.hanyaeger.beroepsproduct.maps.LevelEenMap;
 import javafx.scene.input.KeyCode;
 
 import java.util.Set;

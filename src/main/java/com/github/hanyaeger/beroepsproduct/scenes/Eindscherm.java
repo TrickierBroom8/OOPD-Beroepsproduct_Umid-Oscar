@@ -1,6 +1,7 @@
-package com.github.hanyaeger.beroepsproduct;
+package com.github.hanyaeger.beroepsproduct.scenes;
 
 import com.github.hanyaeger.api.scenes.StaticScene;
+import com.github.hanyaeger.beroepsproduct.KermitRunner;
 
 public class Eindscherm extends StaticScene {
     public Eindscherm(KermitRunner kermitRunner) {
