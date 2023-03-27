@@ -38,7 +38,9 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
         } else if (collider.getClass() == DeurEntity.class) {
             kermitrunner.zetVolgendeScene();
         } else if(collider.getClass() == MushroomEntity.class) {
-            // Raak mushroom
+            this.collisionAfstand();
+            this.stopKermit();
+            // Leven er af
         }
     }
 

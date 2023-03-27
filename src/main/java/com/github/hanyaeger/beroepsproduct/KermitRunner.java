@@ -19,6 +19,8 @@ public class KermitRunner extends YaegerGame {
     private final Size size = new Size(1280, 720);
     public int huidigeScene = 0;
 
+    public final int BEGIN_SCHERM = 0, LEVEL_EEN = 1, VOLTOOID_EEN = 2, LEVEL_TWEE = 3, VOLTOOID_TWEE = 4, LEVEL_DRIE = 5, EIND_SCHERM = 6;
+
     @Override
     public void setupGame() {
         setGameTitle("Kermit Runner");
@@ -27,16 +29,16 @@ public class KermitRunner extends YaegerGame {
 
     @Override
     public void setupScenes() {
-        addScene(0, new BeginScherm(this));
+        addScene(BEGIN_SCHERM, new BeginScherm(this));
 
-        addScene(1, new LevelScherm(this, new LevelEenMap(new Coordinate2D(0, 0), size)));
-        addScene(2 , new LevelEenVoltooid(this));
+        addScene(LEVEL_EEN, new LevelScherm(this, new LevelEenMap(new Coordinate2D(0, 0), size)));
+        addScene(VOLTOOID_EEN , new LevelEenVoltooid(this));
 
-        addScene(3, new LevelScherm(this, new LevelTweeMap(new Coordinate2D(0, 0), size)));
-        addScene(4, new LevelTweeVoltooid(this));
+        addScene(LEVEL_TWEE, new LevelScherm(this, new LevelTweeMap(new Coordinate2D(0, 0), size)));
+        addScene(VOLTOOID_TWEE, new LevelTweeVoltooid(this));
 
-        addScene(5, new LevelScherm(this, new LevelDrieMap(new Coordinate2D(0, 0), size)));
-        addScene(6, new Eindscherm(this));
+        addScene(LEVEL_DRIE, new LevelScherm(this, new LevelDrieMap(new Coordinate2D(0, 0), size)));
+        addScene(EIND_SCHERM, new Eindscherm(this));
     }
 
     public int getHuidigeScene() {
@@ -55,5 +57,20 @@ public class KermitRunner extends YaegerGame {
         int volgendeScene = volgendeScene();
         huidigeScene = volgendeScene;
         setActiveScene(volgendeScene);
+    }
+
+    public int bepaalVorigTussenScherm() {
+        if (huidigeScene == LEVEL_TWEE) {
+            return VOLTOOID_EEN;
+        } else if (huidigeScene == LEVEL_DRIE) {
+            return VOLTOOID_TWEE;
+        } else {
+            return BEGIN_SCHERM;
+        }
+    }
+
+    public void zetScene(int bepaalVorigTussenScherm) {
+        huidigeScene = bepaalVorigTussenScherm;
+        setActiveScene(bepaalVorigTussenScherm);
     }
 }
