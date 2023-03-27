@@ -2,19 +2,26 @@ package com.github.hanyaeger.beroepsproduct.scenes;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.Timer;
+import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMap;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.beroepsproduct.KermitRunner;
+import com.github.hanyaeger.beroepsproduct.SpelTijd;
 import com.github.hanyaeger.beroepsproduct.entities.Kermit;
 import javafx.scene.input.KeyCode;
 
 import java.util.Set;
 
-public class LevelScherm extends DynamicScene implements TileMapContainer, KeyListener {
+public class LevelScherm extends DynamicScene implements TimerContainer, TileMapContainer, KeyListener {
     private KermitRunner kermitrunner;
+
+    private final int TIMER_START_TIJD = 15;
+    private int timerTijd = TIMER_START_TIJD;
+    private Timer spelKlok;
     private TileMap levelMap;
     public Kermit kermit;
 
@@ -55,5 +62,22 @@ public class LevelScherm extends DynamicScene implements TileMapContainer, KeyLi
                 kermit.stopKermit();
             }
         }
+    }
+
+    @Override
+    public void setupTimers() {
+        spelKlok = new SpelTijd(this);
+        addTimer(spelKlok);
+    }
+
+    public void update() {
+        if (timerTijd <= 0) {
+            timerTijd = TIMER_START_TIJD;
+            kermitrunner.zetScene(kermitrunner.bepaalVorigTussenScherm());
+        } else {
+//          displayNumberText.setText(Integer.toString(timerTijd--));
+            timerTijd--;
+        }
+        System.out.println("Tijd: = " + timerTijd);
     }
 }
