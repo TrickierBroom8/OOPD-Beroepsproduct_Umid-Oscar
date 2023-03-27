@@ -4,14 +4,18 @@ import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.beroepsproduct.KermitRunner;
+import com.github.hanyaeger.beroepsproduct.VolgendeKnop;
 import com.github.hanyaeger.beroepsproduct.scenes.TussenScherm;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
 public class LevelEenVoltooid extends TussenScherm {
+
+    private KermitRunner kermitrunner;
     public LevelEenVoltooid(KermitRunner kermitrunner) {
-        super(kermitrunner, "backgrounds/Level_een_voltooid.png");
+        super("backgrounds/Level_een_voltooid.png" );
+        this.kermitrunner = kermitrunner;
     }
 
     public void setupEntities() {
@@ -25,5 +29,7 @@ public class LevelEenVoltooid extends TussenScherm {
         felicitatieText.setStrokeColor(Color.ORANGE);
         felicitatieText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 30));
         addEntity(felicitatieText);
+
+        addEntity(new VolgendeKnop(kermitrunner, new Coordinate2D(getWidth() / 2, getHeight() * 0.8)));
     }
 }

@@ -1,25 +1,18 @@
 package com.github.hanyaeger.beroepsproduct.scenes;
 
 import com.github.hanyaeger.api.scenes.StaticScene;
-import com.github.hanyaeger.beroepsproduct.KermitRunner;
 
 public class TussenScherm extends StaticScene {
 
-    private KermitRunner kermitrunner;
     private String achtergrond;
     private String audio;
 
-    public TussenScherm(KermitRunner kermitrunner) {
-        this.kermitrunner = kermitrunner;
-    }
-
-    public TussenScherm(KermitRunner kermitrunner, String achtergrond) {
-        this(kermitrunner);
+    public TussenScherm(String achtergrond) {
         this.achtergrond = achtergrond;
     }
 
-    public TussenScherm(KermitRunner kermitrunner, String url, String audio) {
-        this(kermitrunner, url);
+    public TussenScherm(String achtergrond, String audio) {
+        this(achtergrond);
         this.audio = audio;
     }
 

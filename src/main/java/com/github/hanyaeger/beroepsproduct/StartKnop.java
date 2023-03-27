@@ -24,7 +24,7 @@ public class StartKnop extends TextEntity implements MouseButtonPressedListener,
 
     @Override
     public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D){
-        kermitrunner.setActiveScene(1);
+        kermitrunner.zetVolgendeScene();
     }
 
     @Override
