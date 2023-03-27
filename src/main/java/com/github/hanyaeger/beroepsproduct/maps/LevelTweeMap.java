@@ -5,6 +5,7 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.TileMap;
 import com.github.hanyaeger.beroepsproduct.entities.DeurEntity;
 import com.github.hanyaeger.beroepsproduct.entities.HegEntity;
+import com.github.hanyaeger.beroepsproduct.entities.MushroomEntity;
 import com.github.hanyaeger.beroepsproduct.entities.PadEntityForTileMap;
 
 
@@ -19,6 +20,7 @@ public class LevelTweeMap extends TileMap {
         addEntity(1, PadEntityForTileMap.class, PadEntityForTileMap.PadType.PAD);
         addEntity(2, HegEntity.class);
         addEntity(3, DeurEntity.class);
+        addEntity(4, MushroomEntity.class);
     }
 
     @Override
