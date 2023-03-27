@@ -30,7 +30,7 @@ public class LevelScherm extends DynamicScene implements TileMapContainer, KeyLi
 
     @Override
     public void setupEntities() {
-        kermit = new Kermit(new Coordinate2D(12, 12), new Size(24, 24), kermitrunner);
+        kermit = new Kermit(new Coordinate2D(44, 44), new Size(24, 24), kermitrunner);
         addEntity(kermit);
     }
 
