@@ -14,7 +14,9 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
 
     private KermitRunner kermitrunner;
     Direction kermitRichting;
-    int snelheid = 1;
+    double snelheid = 0.35;
+
+    double afstand = 1;
 
     int x, y;
 
@@ -48,21 +50,21 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
     }
 
     public void collisionAfstand() {
-        int x = (int) getAnchorLocation().getX();
-        int y = (int) getAnchorLocation().getY();
+        x = (int) getAnchorLocation().getX();
+        y = (int) getAnchorLocation().getY();
 
         switch (kermitRichting) {
             case UP:
-                y += this.snelheid;
+                y += afstand;
                 break;
             case DOWN:
-                y -= this.snelheid;
+                y -= afstand;
                 break;
             case LEFT:
-                x += this.snelheid;
+                x += afstand;
                 break;
             case RIGHT:
-                x -= this.snelheid;
+                x -= afstand;
                 break;
         }
         this.setAnchorLocation(new Coordinate2D(x, y));

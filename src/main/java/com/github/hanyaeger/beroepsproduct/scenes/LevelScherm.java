@@ -25,7 +25,7 @@ public class LevelScherm extends DynamicScene implements TileMapContainer, KeyLi
 
     @Override
     public void setupScene() {
-
+        setBackgroundAudio("audio/Levelscherm.mp3");
     }
 
     @Override
