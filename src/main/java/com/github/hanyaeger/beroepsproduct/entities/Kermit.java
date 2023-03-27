@@ -37,6 +37,8 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
             this.stopKermit();
         } else if (collider.getClass() == DeurEntity.class) {
             kermitrunner.zetVolgendeScene();
+        } else if(collider.getClass() == MushroomEntity.class) {
+            // Raak mushroom
         }
     }
 
@@ -54,18 +56,10 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
         y = (int) getAnchorLocation().getY();
 
         switch (kermitRichting) {
-            case UP:
-                y += afstand;
-                break;
-            case DOWN:
-                y -= afstand;
-                break;
-            case LEFT:
-                x += afstand;
-                break;
-            case RIGHT:
-                x -= afstand;
-                break;
+            case UP -> y += afstand;
+            case DOWN -> y -= afstand;
+            case LEFT -> x += afstand;
+            case RIGHT -> x -= afstand;
         }
         this.setAnchorLocation(new Coordinate2D(x, y));
     }
