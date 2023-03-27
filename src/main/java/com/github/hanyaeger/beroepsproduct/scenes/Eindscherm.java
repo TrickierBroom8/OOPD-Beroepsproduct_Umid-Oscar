@@ -9,7 +9,7 @@ public class Eindscherm extends StaticScene {
 
     @Override
     public void setupScene() {
-//        setBackgroundAudio("audio/Eindscherm.mp3");
+        setBackgroundAudio("audio/Eindscherm.mp3");
         setBackgroundImage("backgrounds/Eindscherm.png");
     }
 
