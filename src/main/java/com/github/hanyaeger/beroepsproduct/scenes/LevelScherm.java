@@ -1,10 +1,10 @@
 package com.github.hanyaeger.beroepsproduct.scenes;
 
-import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.scenes.DynamicScene;
+import com.github.hanyaeger.api.scenes.TileMap;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.beroepsproduct.KermitRunner;
@@ -14,13 +14,14 @@ import javafx.scene.input.KeyCode;
 
 import java.util.Set;
 
-public class LevelEenScherm extends DynamicScene implements TileMapContainer, KeyListener {
-
+public class LevelScherm extends DynamicScene implements TileMapContainer, KeyListener {
     private KermitRunner kermitrunner;
+    private TileMap levelMap;
     public Kermit kermit;
 
-    public LevelEenScherm(KermitRunner kermitrunner) {
+    public LevelScherm(KermitRunner kermitrunner, TileMap levelMap) {
         this.kermitrunner = kermitrunner;
+        this.levelMap = levelMap;
     }
 
     @Override
@@ -36,8 +37,7 @@ public class LevelEenScherm extends DynamicScene implements TileMapContainer, Ke
 
     @Override
     public void setupTileMaps() {
-        var levelEenMap = new LevelEenMap(new Coordinate2D(0, 0), new Size(getWidth(), getHeight()));
-        addTileMap(levelEenMap);
+        addTileMap(levelMap);
     }
 
 
