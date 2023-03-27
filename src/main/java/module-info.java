@@ -10,5 +10,5 @@ module kermitrunner {
     exports com.github.hanyaeger.beroepsproduct.scenes;
     exports com.github.hanyaeger.beroepsproduct.maps;
     exports com.github.hanyaeger.beroepsproduct.entities;
-    exports com.github.hanyaeger.beroepsproduct.scenes.levelschermen;
+
 }
