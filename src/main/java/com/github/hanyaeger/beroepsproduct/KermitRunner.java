@@ -82,4 +82,8 @@ public class KermitRunner extends YaegerGame {
         huidigeScene = id;
         setActiveScene(id);
     }
+
+    public void gefaald() {
+        zetScene(bepaalGefaaldScherm());
+    }
 }
