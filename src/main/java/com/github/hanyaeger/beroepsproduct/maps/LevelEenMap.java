@@ -19,6 +19,7 @@ public class LevelEenMap extends TileMap {
         addEntity(3, DeurEntity.class);
         addEntity(4, MushroomEntity.class);
         addEntity(5, HartEntity.class);
+        addEntity(6, KlokEntity.class);
     }
 
     @Override

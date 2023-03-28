@@ -50,7 +50,11 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
             this.collisionAfstand();
             this.stopKermit();
             levens = levens + 1;
+        } else if(collider.getClass() == KlokEntity.class) {
+            this.collisionAfstand();
+            this.stopKermit();
         }
+
         // scherm.haalTimerTijdAf(10);
     }
 
