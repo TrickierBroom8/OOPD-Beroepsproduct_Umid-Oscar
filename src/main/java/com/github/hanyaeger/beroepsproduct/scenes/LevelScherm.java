@@ -37,7 +37,7 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
     @Override
     public void setupScene() {
         setBackgroundAudio("audio/Levelscherm.mp3");
-        setBackgroundImage("background/Levelscherm.jpg");
+        setBackgroundImage("backgrounds/Levelscherm.jpg");
     }
 
     @Override
