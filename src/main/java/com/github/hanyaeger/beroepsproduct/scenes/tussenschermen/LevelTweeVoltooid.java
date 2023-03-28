@@ -24,9 +24,9 @@ public class LevelTweeVoltooid extends TussenScherm {
         );
 
         felicitatieText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        felicitatieText.setFill(Color.GREEN);
-        felicitatieText.setStrokeColor(Color.ORANGE);
-        felicitatieText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 30));
+        felicitatieText.setFill(Color.WHITE);
+        felicitatieText.setStrokeColor(Color.BLACK);
+        felicitatieText.setFont(Font.font("Roboto", FontWeight.BOLD, 30));
         addEntity(felicitatieText);
 
         addEntity(new VolgendeKnop(kermitrunner, new Coordinate2D(getWidth() / 2, getHeight() * 0.8), "Ga naar het volgende level"));

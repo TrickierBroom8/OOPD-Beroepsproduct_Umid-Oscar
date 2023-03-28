@@ -1,4 +1,4 @@
-package com.github.hanyaeger.beroepsproduct.scenes;
+package com.github.hanyaeger.beroepsproduct.scenes.tussenschermen;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
@@ -30,8 +30,8 @@ public class Eindscherm extends StaticScene {
         );
 
         felicitatieText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        felicitatieText.setFill(Color.GREEN);
-        felicitatieText.setStrokeColor(Color.ORANGE);
+        felicitatieText.setFill(Color.WHITE);
+        felicitatieText.setStrokeColor(Color.BLACK);
         felicitatieText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 30));
         addEntity(felicitatieText);
 
