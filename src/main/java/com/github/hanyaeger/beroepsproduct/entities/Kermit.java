@@ -4,19 +4,19 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
+import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
-import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.scenes.SceneBorder;
+import com.github.hanyaeger.api.scenes.TileMap;
 import com.github.hanyaeger.beroepsproduct.KermitRunner;
 import com.github.hanyaeger.beroepsproduct.scenes.LevelScherm;
 
 public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorderTouchingWatcher {
-
+    private TileMap levelMap;
     private KermitRunner kermitrunner;
     Direction kermitRichting;
     double snelheid = 0.35;
-
     double afstand = 1;
     LevelScherm scherm;
 
@@ -24,10 +24,11 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
 
     int x, y;
 
-    public Kermit(Coordinate2D location, Size size, KermitRunner kermitrunner, LevelScherm huidigScherm) {
+    public Kermit(Coordinate2D location, Size size, KermitRunner kermitrunner, LevelScherm huidigScherm, TileMap levelMap) {
         super("entities/Kermit.gif", location, size);
         this.kermitrunner = kermitrunner;
         this.scherm = huidigScherm;
+        this.levelMap = levelMap;
     }
 
     public void beweegKermit(Direction richting) {
@@ -52,12 +53,13 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
             this.stopKermit();
             levens += 1;
             scherm.updateLevensDisplay();
+
+            ((HartEntity) collider).remove();
         } else if(collider.getClass() == KlokEntity.class) {
             this.collisionAfstand();
             this.stopKermit();
+            scherm.voegTimerTijdToe(10);
         }
-
-        // scherm.haalTimerTijdAf(10);
     }
 
     public void notifyBoundaryTouching(final SceneBorder border) {
