@@ -55,8 +55,7 @@ public class KermitRunner extends YaegerGame {
 
     public void zetVolgendeScene() {
         int volgendeScene = volgendeScene();
-        huidigeScene = volgendeScene;
-        setActiveScene(volgendeScene);
+        zetScene(volgendeScene);
     }
 
     public int bepaalVorigTussenScherm() {

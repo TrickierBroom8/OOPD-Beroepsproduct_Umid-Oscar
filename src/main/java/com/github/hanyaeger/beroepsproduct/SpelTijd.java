@@ -14,6 +14,6 @@ public class SpelTijd extends Timer {
 
     @Override
     public void onAnimationUpdate(long timestamp) {
-        scene.update();
+        scene.updateTimer();
     }
 }

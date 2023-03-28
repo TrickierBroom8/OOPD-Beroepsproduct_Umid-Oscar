@@ -20,7 +20,7 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
     double afstand = 1;
     LevelScherm scherm;
 
-    int levens = 2;
+    public int levens = 2;
 
     int x, y;
 
@@ -46,10 +46,12 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
             this.collisionAfstand();
             this.stopKermit();
             levens -= 1;
+            scherm.updateLevensDisplay();
         } else if(collider.getClass() == HartEntity.class) {
             this.collisionAfstand();
             this.stopKermit();
             levens += 1;
+            scherm.updateLevensDisplay();
         }
         // scherm.haalTimerTijdAf(10);
     }
