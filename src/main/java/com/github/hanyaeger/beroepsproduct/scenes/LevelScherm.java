@@ -20,6 +20,7 @@ import java.util.Set;
 public class LevelScherm extends DynamicScene implements TimerContainer, TileMapContainer, KeyListener {
     private KermitRunner kermitrunner;
     private TextEntity displayTimer;
+    private TextEntity displayHeart;
     private int timerStartTijd;
     private int timerTijd;
     private Timer spelKlok;
@@ -48,6 +49,12 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
         displayTimer.setFill(Color.WHITE);
         displayTimer.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         addEntity(displayTimer);
+
+        displayHeart = new TextEntity(new Coordinate2D(getWidth() - 90, 17.5), Integer.toString(kermit.levens));
+        displayHeart.setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        displayHeart.setFill(Color.WHITE);
+        displayHeart.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+        addEntity(displayHeart);
     }
 
     @Override
@@ -79,12 +86,20 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
         addTimer(spelKlok);
     }
 
-    public void update() {
+    public void updateTimer() {
         if (timerTijd <= 0) {
             timerTijd = timerStartTijd;
             kermitrunner.zetScene(kermitrunner.bepaalVorigTussenScherm());
         } else {
           displayTimer.setText(Integer.toString(timerTijd--));
+        }
+    }
+
+    public void updateLevensDisplay() {
+        displayHeart.setText(Integer.toString(kermit.levens));
+        if (kermit.levens <= 0) {
+            kermit.levens = 2;
+            kermitrunner.zetScene(kermitrunner.bepaalVorigTussenScherm());
         }
     }
 
