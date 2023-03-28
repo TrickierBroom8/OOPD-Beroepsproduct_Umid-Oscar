@@ -8,5 +8,5 @@ import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 public class HartEntity extends SpriteEntity implements Collider {
 
     public HartEntity(final Coordinate2D location, final Size size){
-        super("entities/Heart_simple.png", location, size);}
+        super("entities/Heart_simple.jpg", location, size);}
 }
