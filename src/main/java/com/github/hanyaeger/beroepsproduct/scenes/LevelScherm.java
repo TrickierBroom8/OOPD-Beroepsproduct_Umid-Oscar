@@ -1,10 +1,8 @@
 package com.github.hanyaeger.beroepsproduct.scenes;
 
-import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.Size;
-import com.github.hanyaeger.api.Timer;
-import com.github.hanyaeger.api.TimerContainer;
+import com.github.hanyaeger.api.*;
 import com.github.hanyaeger.api.entities.Direction;
+import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMap;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
@@ -13,21 +11,26 @@ import com.github.hanyaeger.beroepsproduct.KermitRunner;
 import com.github.hanyaeger.beroepsproduct.SpelTijd;
 import com.github.hanyaeger.beroepsproduct.entities.Kermit;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.util.Set;
 
 public class LevelScherm extends DynamicScene implements TimerContainer, TileMapContainer, KeyListener {
     private KermitRunner kermitrunner;
-
-    private final int TIMER_START_TIJD = 1000000000;
-    private int timerTijd = TIMER_START_TIJD;
+    private TextEntity displayTimer;
+    private int timerStartTijd;
+    private int timerTijd;
     private Timer spelKlok;
     private TileMap levelMap;
     public Kermit kermit;
 
-    public LevelScherm(KermitRunner kermitrunner, TileMap levelMap) {
+    public LevelScherm(KermitRunner kermitrunner, TileMap levelMap, int timerStartTijd) {
         this.kermitrunner = kermitrunner;
         this.levelMap = levelMap;
+        this.timerStartTijd = timerStartTijd;
+        this.timerTijd = timerStartTijd;
     }
 
     @Override
@@ -37,8 +40,14 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
 
     @Override
     public void setupEntities() {
-        kermit = new Kermit(new Coordinate2D(44, 44), new Size(24, 24), kermitrunner);
+        kermit = new Kermit(new Coordinate2D(44, 44), new Size(24, 24), kermitrunner, this);
         addEntity(kermit);
+
+        displayTimer = new TextEntity(new Coordinate2D(90, 17.5), Integer.toString(timerTijd));
+        displayTimer.setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        displayTimer.setFill(Color.WHITE);
+        displayTimer.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+        addEntity(displayTimer);
     }
 
     @Override
@@ -72,12 +81,18 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
 
     public void update() {
         if (timerTijd <= 0) {
-            timerTijd = TIMER_START_TIJD;
+            timerTijd = timerStartTijd;
             kermitrunner.zetScene(kermitrunner.bepaalVorigTussenScherm());
         } else {
-//          displayNumberText.setText(Integer.toString(timerTijd--));
-            timerTijd--;
+          displayTimer.setText(Integer.toString(timerTijd--));
         }
-        System.out.println("Tijd: = " + timerTijd);
+    }
+
+    public void voegTimerTijdToe(int tijd) {
+        timerTijd += tijd;
+    }
+
+    public void haalTimerTijdAf(int tijd) {
+        timerTijd -= tijd;
     }
 }
