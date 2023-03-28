@@ -30,8 +30,8 @@ public class Eindscherm extends StaticScene {
         );
 
         felicitatieText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        felicitatieText.setFill(Color.GREEN);
-        felicitatieText.setStrokeColor(Color.ORANGE);
+        felicitatieText.setFill(Color.WHITE);
+        felicitatieText.setStrokeColor(Color.BLACK);
         felicitatieText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 30));
         addEntity(felicitatieText);
 

@@ -80,5 +80,6 @@ public class Kermit extends DynamicSpriteEntity implements Collided, SceneBorder
             case RIGHT -> x -= afstand;
         }
         this.setAnchorLocation(new Coordinate2D(x, y));
+        fog.setAnchorLocation(new Coordinate2D(x, y));
     }
 }
