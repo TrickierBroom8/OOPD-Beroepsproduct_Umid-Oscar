@@ -3,10 +3,7 @@ package com.github.hanyaeger.beroepsproduct.maps;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.TileMap;
-import com.github.hanyaeger.beroepsproduct.entities.DeurEntity;
-import com.github.hanyaeger.beroepsproduct.entities.HegEntity;
-import com.github.hanyaeger.beroepsproduct.entities.MushroomEntity;
-import com.github.hanyaeger.beroepsproduct.entities.PadEntityForTileMap;
+import com.github.hanyaeger.beroepsproduct.entities.*;
 
 
 public class LevelTweeMap extends TileMap {
@@ -21,6 +18,7 @@ public class LevelTweeMap extends TileMap {
         addEntity(2, HegEntity.class);
         addEntity(3, DeurEntity.class);
         addEntity(4, MushroomEntity.class);
+        addEntity(5, HartEntity.class);
     }
 
     @Override
