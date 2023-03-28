@@ -9,6 +9,7 @@ import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.beroepsproduct.KermitRunner;
 import com.github.hanyaeger.beroepsproduct.SpelTijd;
+import com.github.hanyaeger.beroepsproduct.entities.Fog;
 import com.github.hanyaeger.beroepsproduct.entities.Kermit;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
@@ -26,6 +27,9 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
     private Timer spelKlok;
     private TileMap levelMap;
     public Kermit kermit;
+    public Fog fog;
+
+    public int x = 44, y = 44;
 
     public LevelScherm(KermitRunner kermitrunner, TileMap levelMap, int timerStartTijd) {
         this.kermitrunner = kermitrunner;
@@ -37,12 +41,16 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
     @Override
     public void setupScene() {
         setBackgroundAudio("audio/Levelscherm.mp3");
-        setBackgroundImage("background/Levelscherm.jpg");
+        setBackgroundImage("backgrounds/Levelscherm.jpg");
     }
 
     @Override
     public void setupEntities() {
-        kermit = new Kermit(new Coordinate2D(44, 44), new Size(24, 24), kermitrunner, this, levelMap);
+        fog = new Fog(new Coordinate2D(x, y));
+        fog.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+        addEntity(fog);
+
+        kermit = new Kermit(new Coordinate2D(x, y), new Size(24, 24), kermitrunner, this, fog);
         addEntity(kermit);
 
         displayTimer = new TextEntity(new Coordinate2D(90, 17.5), Integer.toString(timerTijd));

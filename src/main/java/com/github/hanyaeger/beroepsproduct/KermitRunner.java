@@ -4,8 +4,8 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.beroepsproduct.maps.LevelDrieMap;
-import com.github.hanyaeger.beroepsproduct.maps.LevelTweeMap;
 import com.github.hanyaeger.beroepsproduct.maps.LevelEenMap;
+import com.github.hanyaeger.beroepsproduct.maps.LevelTweeMap;
 import com.github.hanyaeger.beroepsproduct.scenes.BeginScherm;
 import com.github.hanyaeger.beroepsproduct.scenes.Eindscherm;
 import com.github.hanyaeger.beroepsproduct.scenes.LevelScherm;
@@ -54,8 +54,7 @@ public class KermitRunner extends YaegerGame {
     }
 
     public void zetVolgendeScene() {
-        int volgendeScene = volgendeScene();
-        zetScene(volgendeScene);
+        zetScene(volgendeScene());
     }
 
     public int bepaalVorigTussenScherm() {
