@@ -5,7 +5,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.beroepsproduct.KermitRunner;
-import com.github.hanyaeger.beroepsproduct.StartKnop;
+import com.github.hanyaeger.beroepsproduct.VolgendeKnop;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -26,7 +26,7 @@ public class BeginScherm extends StaticScene {
 
     @Override
     public void setupEntities() {
-        addEntity(new StartKnop(kermitrunner, new Coordinate2D(getWidth() / 2, getHeight() * 0.8)));
+        addEntity(new VolgendeKnop(kermitrunner, new Coordinate2D(getWidth() / 2, getHeight() * 0.8), "Ga naar het eerste level"));
 
         var titelText = new TextEntity(
                 new Coordinate2D(getWidth() / 2, getHeight() / 3),

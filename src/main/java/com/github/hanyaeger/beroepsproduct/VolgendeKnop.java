@@ -15,8 +15,8 @@ import javafx.scene.text.FontWeight;
 public class VolgendeKnop extends TextEntity implements MouseButtonPressedListener, MouseExitListener, MouseEnterListener {
     private KermitRunner kermitrunner;
 
-    public VolgendeKnop(KermitRunner kermitrunner, Coordinate2D location) {
-        super(location, "Volgend level");
+    public VolgendeKnop(KermitRunner kermitrunner, Coordinate2D location, String titel) {
+        super(location, titel);
         setFill(Color.PURPLE);
         setFont(Font.font("Roboto", FontWeight.BOLD, 30));
         setAnchorPoint(AnchorPoint.CENTER_CENTER);

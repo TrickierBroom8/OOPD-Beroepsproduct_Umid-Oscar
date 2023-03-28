@@ -30,6 +30,6 @@ public class LevelEenVoltooid extends TussenScherm {
         felicitatieText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 30));
         addEntity(felicitatieText);
 
-        addEntity(new VolgendeKnop(kermitrunner, new Coordinate2D(getWidth() / 2, getHeight() * 0.8)));
+        addEntity(new VolgendeKnop(kermitrunner, new Coordinate2D(getWidth() / 2, getHeight() * 0.8), "Ga naar het volgende level"));
     }
 }

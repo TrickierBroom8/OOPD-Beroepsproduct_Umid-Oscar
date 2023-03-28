@@ -37,11 +37,12 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
     @Override
     public void setupScene() {
         setBackgroundAudio("audio/Levelscherm.mp3");
+        setBackgroundImage("background/Levelscherm.jpg");
     }
 
     @Override
     public void setupEntities() {
-        kermit = new Kermit(new Coordinate2D(44, 44), new Size(24, 24), kermitrunner, this);
+        kermit = new Kermit(new Coordinate2D(44, 44), new Size(24, 24), kermitrunner, this, levelMap);
         addEntity(kermit);
 
         displayTimer = new TextEntity(new Coordinate2D(90, 17.5), Integer.toString(timerTijd));
@@ -109,5 +110,9 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
 
     public void haalTimerTijdAf(int tijd) {
         timerTijd -= tijd;
+    }
+
+    public TileMap getMap() {
+        return levelMap;
     }
 }
