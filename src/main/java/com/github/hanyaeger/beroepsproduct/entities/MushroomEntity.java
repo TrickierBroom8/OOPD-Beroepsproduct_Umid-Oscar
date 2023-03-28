@@ -7,6 +7,6 @@ import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 
 public class MushroomEntity extends SpriteEntity implements Collider {
     public MushroomEntity(final Coordinate2D location, final Size size) {
-        super("entities/mushroom_simple.png", location, size);
+        super("entities/mushroom.gif", location, size);
     }
 }
