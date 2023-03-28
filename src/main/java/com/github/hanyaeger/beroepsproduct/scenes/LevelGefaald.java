@@ -22,7 +22,7 @@ public class LevelGefaald extends TussenScherm {
     public void setupEntities() {
         GefaaldTekst = new TextEntity(
                 new Coordinate2D(getWidth() / 2, getHeight() * 0.1),
-                "Helaas je hebt het doolhof niet op tijd doorlopen."
+                "Helaas je hebt het doolhof niet gehaald."
         );
 
         GefaaldTekst.setAnchorPoint(AnchorPoint.CENTER_CENTER);
