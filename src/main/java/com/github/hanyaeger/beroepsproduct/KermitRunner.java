@@ -7,7 +7,7 @@ import com.github.hanyaeger.beroepsproduct.maps.LevelDrieMap;
 import com.github.hanyaeger.beroepsproduct.maps.LevelEenMap;
 import com.github.hanyaeger.beroepsproduct.maps.LevelTweeMap;
 import com.github.hanyaeger.beroepsproduct.scenes.BeginScherm;
-import com.github.hanyaeger.beroepsproduct.scenes.Eindscherm;
+import com.github.hanyaeger.beroepsproduct.scenes.tussenschermen.Eindscherm;
 import com.github.hanyaeger.beroepsproduct.scenes.LevelGefaald;
 import com.github.hanyaeger.beroepsproduct.scenes.LevelScherm;
 import com.github.hanyaeger.beroepsproduct.scenes.tussenschermen.LevelEenVoltooid;
@@ -61,6 +61,15 @@ public class KermitRunner extends YaegerGame {
             case VOLTOOID_TWEE : return LEVEL_DRIE;
             case LEVEL_DRIE : return EIND_SCHERM;
             case GEFAALD_DRIE : return LEVEL_DRIE;
+        }
+        return 0;
+    }
+
+    public int bepaalGefaaldScherm() {
+        switch (huidigeScene){
+            case LEVEL_EEN : return GEFAALD_EEN;
+            case LEVEL_TWEE : return GEFAALD_TWEE;
+            case LEVEL_DRIE : return GEFAALD_DRIE;
         }
         return 0;
     }

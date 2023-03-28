@@ -98,7 +98,7 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
     public void updateTimer() {
         if (timerTijd <= 0) {
             timerTijd = timerStartTijd;
-            kermitrunner.zetScene(kermitrunner.volgendeScene());
+            kermitrunner.zetScene(kermitrunner.bepaalGefaaldScherm());
         } else {
           displayTimer.setText(Integer.toString(timerTijd--));
         }
@@ -108,7 +108,7 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
         displayHeart.setText(Integer.toString(kermit.levens));
         if (kermit.levens <= 0) {
             kermit.levens = 2;
-            kermitrunner.zetScene(kermitrunner.volgendeScene());
+            kermitrunner.zetScene(kermitrunner.bepaalGefaaldScherm());
         }
     }
 
