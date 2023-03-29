@@ -1,4 +1,4 @@
-package com.github.hanyaeger.beroepsproduct.scenes.tussenschermen;
+package com.github.hanyaeger.beroepsproduct.scenes;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
