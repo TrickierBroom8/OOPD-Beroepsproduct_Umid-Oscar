@@ -33,15 +33,15 @@ public class KermitRunner extends YaegerGame {
     public void setupScenes() {
         addScene(BEGIN_SCHERM, new BeginScherm(this));
 
-        addScene(LEVEL_EEN, new LevelScherm(this, new LevelEenMap(new Coordinate2D(0, 0), size), 60));
+        addScene(LEVEL_EEN, new LevelScherm(this, new LevelEenMap(new Coordinate2D(0, 0), size), 70));
         addScene(GEFAALD_EEN , new LevelGefaald(this));
         addScene(VOLTOOID_EEN , new LevelEenVoltooid(this));
 
-        addScene(LEVEL_TWEE, new LevelScherm(this, new LevelTweeMap(new Coordinate2D(0, 0), size), 50));
+        addScene(LEVEL_TWEE, new LevelScherm(this, new LevelTweeMap(new Coordinate2D(0, 0), size), 60));
         addScene(GEFAALD_TWEE , new LevelGefaald(this));
         addScene(VOLTOOID_TWEE, new LevelTweeVoltooid(this));
 
-        addScene(LEVEL_DRIE, new LevelScherm(this, new LevelDrieMap(new Coordinate2D(0, 0), size), 40));
+        addScene(LEVEL_DRIE, new LevelScherm(this, new LevelDrieMap(new Coordinate2D(0, 0), size), 50));
         addScene(GEFAALD_DRIE , new LevelGefaald(this));
         addScene(EIND_SCHERM, new Eindscherm(this));
     }
