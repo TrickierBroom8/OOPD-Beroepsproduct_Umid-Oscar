@@ -53,13 +53,13 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
         kermit = new Kermit(new Coordinate2D(x, y), new Size(24, 24), kermitrunner, this, fog);
         addEntity(kermit);
 
-        displayTimer = new TextEntity(new Coordinate2D(90, 17.5), Integer.toString(timerTijd));
+        displayTimer = new TextEntity(new Coordinate2D(90, 17.5), "Tijd: " + timerTijd);
         displayTimer.setFont(Font.font("Roboto", FontWeight.BOLD, 30));
         displayTimer.setFill(Color.WHITE);
         displayTimer.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         addEntity(displayTimer);
 
-        displayHeart = new TextEntity(new Coordinate2D(getWidth() - 90, 17.5), Integer.toString(kermit.levens));
+        displayHeart = new TextEntity(new Coordinate2D(getWidth() - 90, 17.5), "Levens: " + kermit.levens);
         displayHeart.setFont(Font.font("Roboto", FontWeight.BOLD, 30));
         displayHeart.setFill(Color.WHITE);
         displayHeart.setAnchorPoint(AnchorPoint.CENTER_CENTER);
@@ -100,12 +100,12 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
             timerTijd = timerStartTijd;
             kermitrunner.gefaald();
         } else {
-          displayTimer.setText(Integer.toString(timerTijd--));
+          displayTimer.setText("Tijd: " + timerTijd--);
         }
     }
 
     public void updateLevensDisplay() {
-        displayHeart.setText(Integer.toString(kermit.levens));
+        displayHeart.setText("Levens: " + kermit.levens);
         if (kermit.levens <= 0) {
             kermit.levens = 2;
             kermitrunner.gefaald();
