@@ -2,7 +2,7 @@ package com.github.hanyaeger.beroepsproduct.scenes;
 
 import com.github.hanyaeger.api.scenes.StaticScene;
 
-public class TussenScherm extends StaticScene {
+public abstract class TussenScherm extends StaticScene {
 
     private String achtergrond;
     private String audio;
@@ -27,7 +27,7 @@ public class TussenScherm extends StaticScene {
     }
 
     @Override
-    public void setupEntities() {
+    public abstract void setupEntities();
 
-    }
+
 }
