@@ -34,9 +34,9 @@ public class BeginScherm extends StaticScene {
         );
 
         titelText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        titelText.setFill(Color.GREEN);
-        titelText.setStrokeColor(Color.ORANGE);
-        titelText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
+        titelText.setFill(Color.WHITE);
+        titelText.setStrokeColor(Color.BLACK);
+        titelText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 120));
         addEntity(titelText);
     }
 }

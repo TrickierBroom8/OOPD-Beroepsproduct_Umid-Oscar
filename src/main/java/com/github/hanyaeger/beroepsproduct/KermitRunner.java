@@ -7,7 +7,7 @@ import com.github.hanyaeger.beroepsproduct.maps.LevelDrieMap;
 import com.github.hanyaeger.beroepsproduct.maps.LevelEenMap;
 import com.github.hanyaeger.beroepsproduct.maps.LevelTweeMap;
 import com.github.hanyaeger.beroepsproduct.scenes.BeginScherm;
-import com.github.hanyaeger.beroepsproduct.scenes.tussenschermen.Eindscherm;
+import com.github.hanyaeger.beroepsproduct.scenes.Eindscherm;
 import com.github.hanyaeger.beroepsproduct.scenes.LevelGefaald;
 import com.github.hanyaeger.beroepsproduct.scenes.LevelScherm;
 import com.github.hanyaeger.beroepsproduct.scenes.tussenschermen.LevelEenVoltooid;
