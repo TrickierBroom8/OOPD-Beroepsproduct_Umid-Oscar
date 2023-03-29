@@ -108,6 +108,7 @@ public class LevelScherm extends DynamicScene implements TimerContainer, TileMap
         displayHeart.setText("Levens: " + kermit.levens);
         if (kermit.levens <= 0) {
             kermit.levens = 2;
+            timerTijd = timerStartTijd;
             kermitrunner.gefaald();
         }
     }
