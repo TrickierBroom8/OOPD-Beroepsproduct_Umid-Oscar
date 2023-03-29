@@ -14,7 +14,7 @@ public class LevelEenMap extends TileMap {
 
     @Override
     public void setupEntities() {
-        addEntity(1, PadEntityForTileMap.class, PadEntityForTileMap.PadType.PAD);
+        addEntity(1, PadEntity.class);
         addEntity(2, HegEntity.class);
         addEntity(3, DeurEntity.class);
         addEntity(4, MushroomEntity.class);
