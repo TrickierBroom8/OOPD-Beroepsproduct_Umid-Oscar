@@ -8,6 +8,7 @@ import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 public class HegEntity extends SpriteEntity implements Collider {
 
     public HegEntity(final Coordinate2D location, final Size size) {
+
         super("entities/grass_long.png", location, size);
     }
 }
