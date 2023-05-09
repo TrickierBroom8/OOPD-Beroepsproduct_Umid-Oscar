@@ -1,33 +1,24 @@
 package com.github.hanyaeger.beroepsproduct.scenes;
 
 import com.github.hanyaeger.api.scenes.StaticScene;
+import com.github.hanyaeger.beroepsproduct.KermitRunner;
+import javafx.scene.paint.Color;
 
-public abstract class TussenScherm extends StaticScene {
+public class TussenScherm extends StaticScene {
 
-    private String achtergrond;
-    private String audio;
+    private KermitRunner kermitrunner;
 
-    public TussenScherm(String achtergrond) {
-        this.achtergrond = achtergrond;
-    }
-
-    public TussenScherm(String achtergrond, String audio) {
-        this(achtergrond);
-        this.audio = audio;
+    public TussenScherm(KermitRunner kermitrunner) {
+        this.kermitrunner = kermitrunner;
     }
 
     @Override
     public void setupScene() {
-        if (achtergrond != null) {
-            setBackgroundImage(achtergrond);
-        }
-        if (audio != null) {
-            setBackgroundAudio(audio);
-        }
+        setBackgroundColor(Color.AQUA);
     }
 
     @Override
-    public abstract void setupEntities();
+    public void setupEntities() {
 
-
+    }
 }
